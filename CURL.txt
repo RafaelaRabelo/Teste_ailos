@@ -1,0 +1,3 @@
+curl -X POST -H "Authorization: Bearer dapi32486fed3330feaef794007d0725b2ff" -H "Content-Type: application/json" -d '{
+  "job_id": "309361002103294"
+}' "https://dbc-990df228-8a13.cloud.databricks.com/api/2.0/jobs/run-now"
