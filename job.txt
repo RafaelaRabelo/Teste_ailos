@@ -1,0 +1,29 @@
+resources:
+  jobs:
+    New_Job_2024_05_08_13_03_05:
+      name: New Job 2024-05-08 13:03:05
+      tasks:
+        - task_key: Ailos
+          notebook_task:
+            notebook_path: /Users/rafaelabernardesrabelo@gmail.com/bronze
+            source: WORKSPACE
+          job_cluster_key: Job_cluster
+      job_clusters:
+        - job_cluster_key: Job_cluster
+          new_cluster:
+            spark_version: 13.3.x-scala2.12
+            aws_attributes:
+              first_on_demand: 1
+              availability: SPOT_WITH_FALLBACK
+              zone_id: sa-east-1b
+              spot_bid_price_percent: 100
+              ebs_volume_count: 0
+            node_type_id: i3.xlarge
+            spark_env_vars:
+              PYSPARK_PYTHON: /databricks/python3/bin/python3
+            enable_elastic_disk: false
+            data_security_mode: SINGLE_USER
+            runtime_engine: PHOTON
+            num_workers: 8
+      queue:
+        enabled: true
